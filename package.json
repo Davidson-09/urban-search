@@ -1,0 +1,16 @@
+{
+  "name": "search-engine",
+  "version": "1.0.0",
+  "description": "search engine for african urban cities",
+  "main": "index.js", 
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "laju",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.0"
+  }
+}
