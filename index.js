@@ -7,6 +7,10 @@ import { getUrbanArea } from './getArea.js';
 
 const app = express()
 
+app.get('/', (req, res)=>{
+    res.send("hello, welcome to urban search")
+})
+
 // get the list of african urban areas
 app.get('/api/urbanareas', async(req, res)=>{
     // get the cities in 
@@ -23,13 +27,16 @@ app.get('/api/urbanareas', async(req, res)=>{
 // search an african urban area by name
 app.get('/api/urbanareas/:name', async(req, res)=>{
     const areaName = req.params.name
-    const area = await getUrbanArea(areaName)
-    if (area !== null){
-        res.send(JSON.stringify(area))
-    }else{
-        res.status(404)
-        res.send('area not found')
-    }
+    await getUrbanArea(areaName).then(area =>{
+        if (area !== null ){
+            res.send(JSON.stringify(area))
+        }else{
+            res.status(404)
+            res.send('area not found')
+        }
+    })
+    
 })
 
-app.listen(3000, ()=> console.log('listening.................................................'))
+const PORT = process.env.PORT || 3030;
+app.listen(PORT, ()=> console.log(`server started on port ${PORT}`))
