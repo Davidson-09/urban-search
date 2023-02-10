@@ -7,3 +7,5 @@
  https://urbansearch.onrender.com/api/urbanareas/:nameofurbanarea <br/>
  e.g.
  https://urbansearch.onrender.com/api/urbanareas/lagos to get data for a lagos <br/>
+
+Note: this repository is taken down and re-uploaded for training purposes. Cloning is more advisable than forking
